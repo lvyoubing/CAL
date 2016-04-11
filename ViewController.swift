@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         }
         else {
             
-            oeRand2  = opeRand2 + value!
+            opeRand2  = opeRand2 + value!
             reText.text = "\(opeRand2)"
             return
         }
