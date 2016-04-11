@@ -58,20 +58,20 @@ class ViewController: UIViewController {
             }
         }
         else if value == "="{
-            var result = 1
+            var result = 1.0
             switch opeRator {
             case "+":
-                result = Int(opeRand1)! + Int(opeRand2)!
+                result = Double(opeRand1)! + Double(opeRand2)!
             case "-":
-                result = Int(opeRand1)! - Int(opeRand2)!
+                result = Double(opeRand1)! - Double(opeRand2)!
             case "*":
-                result = Int(opeRand1)! * Int(opeRand2)!
+                result = Double(opeRand1)! * Double(opeRand2)!
             case "/":
-                result = Int(opeRand1)! / Int(opeRand2)!
+                result = Double(opeRand1)! / Double(opeRand2)!
             case "%":
-                result = Int(opeRand1)! /      100
+                result = Double(opeRand1)! /      100
             case "^":
-                result = Int(opeRand1)! * Int(opeRand1)!
+                result = Double(opeRand1)! * Double(opeRand1)!
             default :
                 resultText.text = "出错请清零"
             }
