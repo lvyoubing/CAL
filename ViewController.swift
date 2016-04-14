@@ -31,7 +31,6 @@ class ViewController: UIViewController {
 
     @IBAction func Clicked(sender: UIButton) {
         var value = sender.currentTitle
-        let bool_value = true
         if  value == "+"||value == "-"||value == "*"||value == "/"||value == "%"||value == "^"
         {
             opeRator = value!
@@ -49,16 +48,9 @@ class ViewController: UIViewController {
             jieguo.text = "0"
             return
         }
-        else if value == "➕／➖"{
-            if  bool_value ==  true{
-                bool_value == false
-            }
-            else{
-                bool_value == true
-            }
-        }
+
         else if value == "="{
-            var result = 1.0
+            var result = 0.0
             switch opeRator {
             case "+":
                 result = Double(opeRand1)! + Double(opeRand2)!
@@ -69,7 +61,7 @@ class ViewController: UIViewController {
             case "/":
                 result = Double(opeRand1)! / Double(opeRand2)!
             case "%":
-                result = Double(opeRand1)! /      100
+                result = Double(opeRand1)! % Double(opeRand2)!
             case "^":
                 result = Double(opeRand1)! * Double(opeRand1)!
             default :
