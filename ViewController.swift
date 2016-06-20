@@ -10,13 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var resultText: UITextField!
+  
+    @IBOutlet weak var oneText: UITextField!
     @IBOutlet weak var opeRatorText: UITextField!
+    @IBOutlet weak var twoText: UITextField!
     @IBOutlet weak var jieguo: UITextField!
-    @IBOutlet weak var reText: UITextField!
-    var opeRand1: String = ""
-    var opeRand2: String = ""
-    var opeRator: String = ""
+    var a: String = ""
+    var b: String = ""
+    var c: String = ""
     
     
     override func viewDidLoad() {
@@ -33,17 +34,17 @@ class ViewController: UIViewController {
         var value = sender.currentTitle
         if  value == "+"||value == "-"||value == "*"||value == "/"||value == "%"||value == "^"
         {
-            opeRator = value!
-            opeRatorText.text = "\(opeRator)"
+            c = value!
+            opeRatorText.text = "\(c)"
             return
         }
         else if value == "©️"{
-            value = "0"
-            opeRand1 = ""
-            opeRand2 = ""
-            opeRator = ""
-            resultText.text = "0"
-            reText.text = "0"
+
+            a = ""
+            b = ""
+            c = ""
+            oneText.text = "0"
+            twoText.text = "0"
             opeRatorText.text = ""
             jieguo.text = "0"
             return
@@ -51,41 +52,40 @@ class ViewController: UIViewController {
 
         else if value == "="{
             var result = 0.0
-            switch opeRator {
+            switch c {
             case "+":
-                result = Double(opeRand1)! + Double(opeRand2)!
+                result = Double(a)! + Double(b)!
             case "-":
-                result = Double(opeRand1)! - Double(opeRand2)!
+                result = Double(a)! - Double(b)!
             case "*":
-                result = Double(opeRand1)! * Double(opeRand2)!
+                result = Double(a)! * Double(b)!
             case "/":
-                result = Double(opeRand1)! / Double(opeRand2)!
+                result = Double(a)! / Double(b)!
             case "%":
-                result = Double(opeRand1)! % Double(opeRand2)!
+                result = Double(a)! % Double(b)!
             case "^":
-                result = Double(opeRand1)! * Double(opeRand1)!
+                result = Double(a)! * Double(a)!
             default :
-                resultText.text = "出错请清零"
+                oneText.text = "出错请清零"
             }
             jieguo.text  = "\(result)"
-//            opeRatorText.text = ""
-            opeRand1 = ""
-            opeRand2 = ""
-            opeRator = ""
+            a = ""
+            b = ""
+            c = ""
             
             return
    
         }
-        if opeRator   == ""{
+        if c   == ""{
             
-            opeRand1  = opeRand1 + value!
-            resultText.text = "\(opeRand1)"
+            a = a + value!
+            oneText.text = "\(a)"
             return
         }
         else {
             
-            opeRand2  = opeRand2 + value!
-            reText.text = "\(opeRand2)"
+            b  = b + value!
+           twoText.text = "\(b)"
             return
         }
     }
